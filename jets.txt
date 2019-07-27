@@ -1,0 +1,11 @@
+type, model, speedMPH, range, price
+Cargo Jet, Boeing 747 Dreamlifter, 629, 4800, 261000000
+Cargo Jet, Airbus A300-600ST Beluga, 483, 1500, 204000000
+Fighter Jet, Lockheed Martin F-35 Lightning II, 1516, 1199, 1726, 85000000
+Fighter Jet, Sukhoi Su-57, 1227, 2175, 50000000
+Passenger Jet, 
+Passenger Jet, 
+Stealth Jet, 
+Stealth Jet, 
+Bomber Jet, 
+Bomber Jet, 
