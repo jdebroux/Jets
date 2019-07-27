@@ -1,6 +1,6 @@
 package com.skilldistillery.jet;
 
-public class PassengerJet extends Jet {
+public class PassengerJet extends Jet implements CargoCarrier {
 	private int passengerCapacity;
 
 	public PassengerJet() {
@@ -13,10 +13,18 @@ public class PassengerJet extends Jet {
 	}
 
 	@Override
+	public void loadCargo(Jet j) {
+		System.out.println(j.getModel() + " is loading all passengers luggage.");
+	}
+
+	@Override
+	public void fly(Jet j, AirField airField) {
+		super.fly(j, airField);
+	}
+
+	@Override
 	public String toString() {
-		return "PassengerJet [passengerCapacity=" + passengerCapacity + ", getModel()=" + getModel()
-				+ ", getSpeedMPH()=" + getSpeedMPH() + ", getRange()=" + getRange() + ", getPrice()=" + getPrice()
-				+ "]";
+		return "PassengerJet [passengerCapacity=" + passengerCapacity + ", toString()=" + super.toString() + "]";
 	}
 
 }

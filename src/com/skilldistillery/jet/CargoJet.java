@@ -14,8 +14,13 @@ public class CargoJet extends Jet implements CargoCarrier{
 	}
 	
 	@Override
-	public void loadCargo() {
-		System.out.println("Loading Cargo");
+	public void fly(Jet j, AirField airField) {
+		super.fly(j, airField);
+	}
+	
+	@Override
+	public void loadCargo(Jet j) {
+		System.out.println(j.getModel() + " is loading cargo.");
 	}
 
 	@Override

@@ -11,6 +11,11 @@ public class SpyJet extends Jet {
 		super(model, speed, range, price);
 		this.radar = radar;
 	}
+	
+	@Override
+	public void fly(Jet j, AirField airField) {
+		super.fly(j, airField);
+	}
 
 	@Override
 	public String toString() {

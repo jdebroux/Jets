@@ -11,6 +11,21 @@ public class BomberJet extends Jet implements CombatReady{
 		super(model, speed, range, price);
 		this.payload = payload;
 	}
+	
+	@Override
+	public void fly(Jet j, AirField airField) {
+		super.fly(j, airField);
+	}
+
+	@Override
+	public void fight(Jet j) {
+		System.out.println(j.getModel() + " is joining fight!");
+	}
+	
+	@Override
+	public void loadWeapons(Jet j) {
+		System.out.println(j.getModel() + " has all bombs loaded.");
+	}
 
 	@Override
 	public String toString() {
@@ -18,9 +33,5 @@ public class BomberJet extends Jet implements CombatReady{
 				+ ", getRange()=" + getRange() + ", getPrice()=" + getPrice() + "]";
 	}
 
-	@Override
-	public void fight() {//TODO
-		
-	}
 
 }

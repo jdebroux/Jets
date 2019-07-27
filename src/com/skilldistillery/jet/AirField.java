@@ -3,16 +3,17 @@ package com.skilldistillery.jet;
 import java.util.*;
 
 public class AirField {
-	private Set<Jet> jetSet = new TreeSet<>();
+	private List<Jet> jetList = new ArrayList<>();
 
 	public AirField() {
 	}
 
-	public Set<Jet> getJets() {
-		return jetSet;
+	public List<Jet> getJets() {
+		return jetList;
 	}
 
 	public void parkJet(Jet j) {
-		this.jetSet.add(j);
+//		System.out.println(j);
+		this.jetList.add(j);
 	}
 }
