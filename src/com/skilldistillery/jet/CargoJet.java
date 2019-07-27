@@ -1,7 +1,7 @@
 package com.skilldistillery.jet;
 
 public class CargoJet extends Jet implements CargoCarrier{
-	private int cargoCapacity;
+	private int cargoVolume;
 	
 	
 	public CargoJet() {
@@ -10,7 +10,7 @@ public class CargoJet extends Jet implements CargoCarrier{
 
 	public CargoJet(String model, double speed, int range, long price, int cargoCapacity) {
 		super(model, speed, range, price);
-		this.cargoCapacity = cargoCapacity;
+		this.cargoVolume = cargoCapacity;
 	}
 	
 	@Override
@@ -18,4 +18,12 @@ public class CargoJet extends Jet implements CargoCarrier{
 		System.out.println("Loading Cargo");
 	}
 
+	@Override
+	public String toString() {
+		return "CargoJet [cargoVolume=" + cargoVolume + ", getModel()=" + getModel() + ", getSpeedMPH()="
+				+ getSpeedMPH() + ", getRange()=" + getRange() + ", getPrice()=" + getPrice() + "]";
+	}
+
+	
+	
 }

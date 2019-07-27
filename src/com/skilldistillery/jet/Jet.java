@@ -52,6 +52,12 @@ public abstract class Jet {
 	public void setPrice(long price) {
 		this.price = price;
 	}
+
+	@Override
+	public String toString() {
+		return "Jet [model=" + model + ", speedMPH=" + speedMPH + ", range=" + range + ", price=" + price + "]";
+	}
+	
 	
 	
 }

@@ -1,7 +1,8 @@
 package com.skilldistillery.jet;
 
-public class BomberJet extends Jet{
-private int payload;
+public class BomberJet extends Jet implements CombatReady{
+	private int payload;
+
 	public BomberJet() {
 		super();
 	}
@@ -11,7 +12,15 @@ private int payload;
 		this.payload = payload;
 	}
 
-	
-	
-	
+	@Override
+	public String toString() {
+		return "BomberJet [payload=" + payload + ", getModel()=" + getModel() + ", getSpeedMPH()=" + getSpeedMPH()
+				+ ", getRange()=" + getRange() + ", getPrice()=" + getPrice() + "]";
+	}
+
+	@Override
+	public void fight() {//TODO
+		
+	}
+
 }

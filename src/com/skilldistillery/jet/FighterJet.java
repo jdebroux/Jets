@@ -1,12 +1,10 @@
 package com.skilldistillery.jet;
 
-public class FighterJet extends Jet implements CombatReady{
+public class FighterJet extends Jet implements CombatReady {
 	private int missleCapacity;
-	
-	
+
 	public FighterJet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public FighterJet(String model, double speed, int range, long price, int missleCapacity) {
@@ -15,8 +13,14 @@ public class FighterJet extends Jet implements CombatReady{
 	}
 
 	@Override
-	public void fight() {
-		
+	public void fight() {//TODO
+
+	}
+
+	@Override
+	public String toString() {
+		return "FighterJet [missleCapacity=" + missleCapacity + ", getModel()=" + getModel() + ", getSpeedMPH()="
+				+ getSpeedMPH() + ", getRange()=" + getRange() + ", getPrice()=" + getPrice() + "]";
 	}
 
 }

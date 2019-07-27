@@ -1,13 +1,7 @@
 package com.skilldistillery.jet;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+import java.io.*;
+import java.util.*;
 
 public class JetsApplication {
 	private Scanner kb = new Scanner(System.in);
@@ -34,32 +28,27 @@ public class JetsApplication {
 				double speedMPH = Double.parseDouble(jet[2]);
 				int range = Integer.parseInt(jet[3]);
 				long price = Long.parseLong(jet[4]);
-
+				
 				if (jet[0].equals("Cargo Jet")) {
-					int cargoCapacity = Integer.parseInt(jet[5]);
-					airField.parkJet(new CargoJet(jet[1], speedMPH, range, price, cargoCapacity));
-					}//end if
+					int cargoVolume = Integer.parseInt(jet[5]);
+					airField.parkJet(new CargoJet(jet[1], speedMPH, range, price, cargoVolume));
+				} // end if
 				if (jet[0].equals("Fighter Jet")) {
 					int missleCapacity = Integer.parseInt(jet[5]);
 					airField.parkJet(new FighterJet(jet[1], speedMPH, range, price, missleCapacity));
-				}//end if
+				} // end if
 				if (jet[0].equals("Passenger Jet")) {
-					
-					airField.parkJet(new PassengerJet(jet[1], speedMPH, range, price));
-
-				}//end if
-				if (jet[0].equals("Stealth Jet")) {
-					
-					airField.parkJet(new StealthJet(jet[1], speedMPH, range, price));
-				}//end if
+					int passengerCapacity = Integer.parseInt(jet[5]);
+					airField.parkJet(new PassengerJet(jet[1], speedMPH, range, price, passengerCapacity));
+				} // end if
+				if (jet[0].equals("Spy Jet")) {
+					airField.parkJet(new SpyJet(jet[1], speedMPH, range, price, jet[5]));
+				} // end if
 				if (jet[0].equals("Bomber Jet")) {
 					int payload = Integer.parseInt(jet[5]);
 					airField.parkJet(new BomberJet(jet[1], speedMPH, range, price, payload));
-
-				}//end if
-				
-				
-			}//end while loop
+				} // end if
+			} // end while loop
 		} catch (FileNotFoundException e) {
 			System.out.println("Get a clue!");
 		} catch (IOException e) {
@@ -106,7 +95,6 @@ public class JetsApplication {
 		case 9:
 			System.out.println("Quitting Jets Application ");
 			break;
-
 		}// end switch
 	}// end menuSwitch
 }// end class

@@ -3,7 +3,6 @@ package com.skilldistillery.jet;
 import java.util.*;
 
 public class AirField {
-
 	private Set<Jet> jetSet = new TreeSet<>();
 
 	public AirField() {
