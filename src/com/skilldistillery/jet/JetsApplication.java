@@ -21,14 +21,14 @@ public class JetsApplication {
 	}// end launch
 
 	private void readBaseFleet(JetsApplication app) {
-		try (BufferedReader buff = new BufferedReader(new FileReader("jets2.txt"))) {
+		try (BufferedReader buff = new BufferedReader(new FileReader("jets.txt"))) {
 			String line;
 			while ((line = buff.readLine()) != null) {
 				String jet[] = line.split(", ");
 				double speedMPH = Double.parseDouble(jet[2]);
 				int range = Integer.parseInt(jet[3]);
 				long price = Long.parseLong(jet[4]);
-				
+
 				if (jet[0].equals("Cargo Jet")) {
 					int cargoVolume = Integer.parseInt(jet[5]);
 					airField.parkJet(new CargoJet(jet[1], speedMPH, range, price, cargoVolume));
@@ -99,9 +99,10 @@ public class JetsApplication {
 			s.addAJet(airField);
 			break;
 		case 8:
-//			s.removeAJet(airField);
+			s.removeAJet(airField);
 			break;
 		case 9:
+			System.out.println();
 			System.out.println("Quitting Jets Application ");
 			break;
 		}// end switch

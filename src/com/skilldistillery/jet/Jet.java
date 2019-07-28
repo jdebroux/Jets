@@ -5,23 +5,24 @@ public abstract class Jet {
 	private double speedMPH;
 	private int range;
 	private long price;
-	
+
 	public Jet() {
 	}
-	
+
 	public Jet(String model, double speed, int range, long price) {
-		super();//not needed to reach up to 'object' but leaving it to have super()
+		super();// not needed to reach up to 'object' but leaving it to have super()
 		this.model = model;
 		this.speedMPH = speed;
 		this.range = range;
 		this.price = price;
 	}
-	
+
 	public void fly(Jet j, AirField airField) {
 		double flyTime = 0;
-			flyTime = j.getRange()/j.getSpeedMPH(); 
-			System.out.print(this.getModel() + " took off and started flying ");
-			System.out.println("and can fly for " + ((double)Math.round(flyTime * 100 ))/100 + " hours.");
+		flyTime = j.getRange() / j.getSpeedMPH();
+		System.out.println();
+		System.out.print(this.getModel() + " took off ");
+		System.out.println("and can fly for " + ((double) Math.round(flyTime * 100)) / 100 + " hours.");
 	}
 
 	public String getModel() {
@@ -96,7 +97,5 @@ public abstract class Jet {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

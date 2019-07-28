@@ -1,10 +1,10 @@
 Cargo Jet, Boeing 747 Dreamlifter, 629, 4800, 261000000, 65000
 Cargo Jet, Airbus A300-600ST Beluga, 483, 1500, 204000000, 53000
-Fighter Jet, Lockheed Martin F-35 Lightning II, 1516, 1199, 1726, 85000000, 26
+Fighter Jet, Lockheed Martin F-35 Lightning II, 1516, 1199, 85000000, 26
 Fighter Jet, Sukhoi Su-57, 1227, 2175, 50000000, 22
 Passenger Jet, Boeing 707-320B, 657, 5800, 59900000, 219
 Passenger Jet, Boeing 777-300ER, 587, 9010, 320200000, 396
 Spy Jet, RQ-4 Global Hawk, 391, 14154, 131400000, MP-RTIP (SAR)
 Spy Jet, MQ-9 Reaper, 300, 1151, 15900000, Lynx Multi-Mode (SAR)
 Bomber Jet, B-2 Spirit, 1164, 10000, 2100000000, 40000
-Bomber Jet, Tupolev Tu-160, 1367, 8700, 2800000000, 35000
+Bomber Jet, Tubpolev Tu-160, 1367, 8700, 2800000000, 35000

@@ -3,20 +3,22 @@ package com.skilldistillery.jet;
 import java.util.*;
 
 public class MenuSwitch {
+	private Scanner kb = new Scanner(System.in);
 
 	public void listFleet(AirField airField) {
 		List<Jet> jetList = airField.getJets();
 		for (Jet jet : jetList) {
+			System.out.println();
 			System.out.println(jet.toString());
 		}
-	}//end listFleet
+	}// end listFleet
 
 	public void flyAllJets(AirField airField) {
 		List<Jet> jetList = airField.getJets();
 		for (Jet jet : jetList) {
 			jet.fly(jet, airField);
 		}
-	}//end flyAllJets
+	}// end flyAllJets
 
 	public void viewFastestJet(AirField airField) {
 		List<Jet> jetList = airField.getJets();
@@ -28,11 +30,12 @@ public class MenuSwitch {
 		}
 		for (Jet jet2 : jetList) {
 			if (fastest == jet2.getSpeedMPH()) {
+				System.out.println();
 				System.out.println(jet2.toString());
 			}
 		}
-	}//end viewFastestJet
-	
+	}// end viewFastestJet
+
 	public void viewLongestRangeJet(AirField airField) {
 		List<Jet> jetList = airField.getJets();
 		double furthestRange = 0;
@@ -43,44 +46,44 @@ public class MenuSwitch {
 		}
 		for (Jet jet2 : jetList) {
 			if (furthestRange == jet2.getRange()) {
+				System.out.println();
 				System.out.println(jet2.toString());
 			}
 		}
-	}//end viewLongestRangeJet
-	
+	}// end viewLongestRangeJet
+
 	public void loadAllCargoJets(AirField airField) {
 		List<Jet> jetList = airField.getJets();
 		for (Jet jet : jetList) {
-			if ( jet instanceof CargoCarrier) {
+			if (jet instanceof CargoCarrier) {
 				((CargoCarrier) jet).loadCargo(jet);
 			}
 		}
-	}//end loadAllCargoJets
-	
+	}// end loadAllCargoJets
+
 	public void dogFight(AirField airField) {
 		List<Jet> jetList = airField.getJets();
 		for (Jet jet : jetList) {
-			if(jet instanceof CombatReady) {
+			if (jet instanceof CombatReady) {
 				((CombatReady) jet).loadWeapons(jet);
-				System.out.println();
 			}
 		}
 		for (Jet jet : jetList) {
-			if(jet instanceof CombatReady) {
+			if (jet instanceof CombatReady) {
 				((CombatReady) jet).fight(jet);
 			}
 		}
-	}//end dogFight
-	
+	}// end dogFight
+
 	public void addAJet(AirField airField) {
-		Scanner kb = new Scanner(System.in);
+		System.out.println();
 		System.out.println("What type of jet would you like to add?");
 		System.out.println("Cargo, Fighter, Passenger, Spy, or Bomber?");
 		String type = kb.next();
-		getNewJetInfo(kb, type, airField);
-		
-	}
-	private void getNewJetInfo(Scanner kb, String type, AirField airField) {
+		getNewJetInfo(type, airField);
+	}// end addAJet
+
+	private void getNewJetInfo(String type, AirField airField) {
 		System.out.println("Jet Model: ");
 		String model = kb.next();
 		System.out.println("Jet Speed: ");
@@ -89,33 +92,49 @@ public class MenuSwitch {
 		int range = kb.nextInt();
 		System.out.println("Jet Price: ");
 		long price = kb.nextLong();
-		
-		if(type.equalsIgnoreCase("cargo")) {
+
+		if (type.equalsIgnoreCase("cargo")) {
 			System.out.println("Jet Cargo Volume: ");
 			int cargoVolume = Integer.parseInt(kb.next());
 			airField.parkJet(new CargoJet(model, speed, range, price, cargoVolume));
 		}
-		if(type.equalsIgnoreCase("fighter")) {
+		if (type.equalsIgnoreCase("fighter")) {
 			System.out.println("Missile Capacity: ");
 			int missileCapacity = Integer.parseInt(kb.next());
 			airField.parkJet(new FighterJet(model, speed, range, price, missileCapacity));
 		}
-		if(type.equalsIgnoreCase("passenger")) {
+		if (type.equalsIgnoreCase("passenger")) {
 			System.out.println("Passenger Capacity: ");
 			int passengerCapacity = Integer.parseInt(kb.next());
 			airField.parkJet(new PassengerJet(model, speed, range, price, passengerCapacity));
 		}
-		if(type.equalsIgnoreCase("spy")) {
+		if (type.equalsIgnoreCase("spy")) {
 			System.out.println("Jet Radar: ");
 			String radar = kb.next();
 			airField.parkJet(new SpyJet(model, speed, range, price, radar));
 		}
-		if(type.equalsIgnoreCase("bomber")) {
+		if (type.equalsIgnoreCase("bomber")) {
 			System.out.println("Jet Payload: ");
 			int payload = Integer.parseInt(kb.next());
 			airField.parkJet(new BomberJet(model, speed, range, price, payload));
 		}
-		
-	}
 
-}
+	}// end getNewJetInfo
+
+	public void removeAJet(AirField airField) {
+		List<Jet> jetList = airField.getJets();
+		int i = 1;
+		for (Jet jet : jetList) {
+			System.out.println();
+			System.out.println(i + ". " + jet.getModel());
+			i++;
+		}
+		System.out.println();
+		System.out.print("Which jet would you like to remove?");
+		int removeChoice = kb.nextInt();
+		System.out.println(jetList.remove(removeChoice - 1));
+		System.err.println("has been removed.");
+
+	}// end removeAJet
+
+}// end Class

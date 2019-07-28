@@ -19,11 +19,13 @@ public class BomberJet extends Jet implements CombatReady{
 
 	@Override
 	public void fight(Jet j) {
-		System.out.println(j.getModel() + " is joining fight!");
+		System.out.println();
+		System.out.println(j.getModel() + " is bombing enemy resources!");
 	}
 	
 	@Override
 	public void loadWeapons(Jet j) {
+		System.out.println();
 		System.out.println(j.getModel() + " has all bombs loaded.");
 	}
 

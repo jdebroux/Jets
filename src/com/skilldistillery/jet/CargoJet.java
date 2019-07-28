@@ -20,6 +20,7 @@ public class CargoJet extends Jet implements CargoCarrier{
 	
 	@Override
 	public void loadCargo(Jet j) {
+		System.out.println();
 		System.out.println(j.getModel() + " is loading cargo.");
 	}
 

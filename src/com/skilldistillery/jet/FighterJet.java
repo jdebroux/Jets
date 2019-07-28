@@ -19,11 +19,13 @@ public class FighterJet extends Jet implements CombatReady {
 
 	@Override
 	public void fight(Jet j) {
+		System.out.println();
 		System.out.println(j.getModel() + " is joining fight!");
 	}
 	
 	@Override
 	public void loadWeapons(Jet j) {
+		System.out.println();
 		System.out.println(j.getModel() + " has all missiles loaded.");
 	}
 
