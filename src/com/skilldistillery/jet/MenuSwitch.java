@@ -132,8 +132,10 @@ public class MenuSwitch {
 		System.out.println();
 		System.out.print("Which jet would you like to remove?");
 		int removeChoice = kb.nextInt();
+		System.out.println();
 		System.out.println(jetList.remove(removeChoice - 1));
-		System.err.println("has been removed.");
+		System.out.println();
+		System.out.println("has been removed.");
 
 	}// end removeAJet
 
