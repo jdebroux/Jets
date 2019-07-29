@@ -58,6 +58,7 @@ public class JetsApplication {
 
 	private int displayUserMenu(JetsApplication app, int userInput) {
 		System.out.println();
+		System.out.println("\t*** Menu ***");
 		System.out.println("1. List Fleet ");
 		System.out.println("2. Fly All Jets ");
 		System.out.println("3. View Fastest Jet ");
